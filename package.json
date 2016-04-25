@@ -1,0 +1,11 @@
+{
+  "name": "electron_modules",
+  "version": "0.0.1",
+  "scripts": {
+	"build": "babel testModule.js -o testModuleOut.js"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.7.7",
+    "babel-preset-es2015": "^6.3.13"
+  }
+}
