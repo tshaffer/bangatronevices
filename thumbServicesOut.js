@@ -31,12 +31,6 @@ var ThumbServices = function () {
             var dir = '/Users/tedshaffer/Documents/Projects/electron/ba-2/public';
             var suffix = "jpg";
 
-            var numColumns = 2;
-
-            var thumbCount = 0;
-            var columnIndex = 0;
-            var imageItemThumb = {};
-
             var files = fs.readdirSync(dir);
             files.forEach(function (file) {
 
@@ -53,22 +47,12 @@ var ThumbServices = function () {
 
                 var thumb = {};
 
-                thumb.id = thumbCount.toString();
+                thumb.id = mediaLibraryThumbs.length.toString();
                 thumb.thumbUrl = "public/" + url;
                 thumb.path = url;
                 thumb.fileName = file;
 
-                thumbCount++;
-
-                var keyColumn = "column" + columnIndex.toString();
-                imageItemThumb[keyColumn] = thumb;
-                columnIndex++;
-
-                if (columnIndex % numColumns == 0) {
-                    mediaLibraryThumbs.push(imageItemThumb);
-                    imageItemThumb = {};
-                    columnIndex = 0;
-                }
+                mediaLibraryThumbs.push(thumb);
             });
 
             console.log("getThumbSpec complete");

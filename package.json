@@ -2,7 +2,7 @@
   "name": "electron_modules",
   "version": "0.0.1",
   "scripts": {
-	"build": "babel thumbServices.js -o thumbServicesOut.js && babel testModule.js -o testModuleOut.js"
+	"build": "babel thumbServices.js -o thumbServicesOut.js"
   },
   "devDependencies": {
     "babel-cli": "^6.7.7",
